@@ -5,4 +5,9 @@
     <li>Descrição: {{$support->body}}</li>
 
 </ul>
+<form action="{{route('supports.destroy', $support->id)}}" method="post">
+    @csrf()
+    @method('delete')
+    <button type="submit">Deletar</button>
+</form>
 <a href="{{route('supports.index')}}">Listar todos</a>

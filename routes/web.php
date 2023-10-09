@@ -15,12 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//POT's
+Route::delete('/supports/{id}', [SupportController::class, 'destroy'])->name('supports.destroy');
+
+//POST's
 Route::post('/supports/store', [SupportController::class, 'store'])->name('supports.store');
 
-// GET's
+// PUT's
+Route::put('/supports/{id}', [SupportController::class, 'update'])->name('supports.update');
 
+// GET's
 Route::get('/supports/{id}', [SupportController::class, 'show'])->name('supports.show');
+
+Route::get('/supports/{id}/edit', [SupportController::class, 'edit'])->name('supports.edit');
 
 Route::get('/supports/create', [SupportController::class, 'create'])->name('supports.create');
 
